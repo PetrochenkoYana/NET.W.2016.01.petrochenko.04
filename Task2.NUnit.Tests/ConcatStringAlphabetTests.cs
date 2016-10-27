@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,17 +25,20 @@ namespace Task2.NUnit.Tests
         [Test]
         public void ConcatTest3()
         {
-            Assert.AreEqual(ConcatStringAlphabet.Longest("", ""), "");
+            Assert.Throws(typeof(FormatException), () => ConcatStringAlphabet.Longest("", ""), "");
         }
         [Test]
+      
         public void ConcatTest4()
         {
-            Assert.AreEqual(ConcatStringAlphabet.Longest(null, "vgkkcyfggkg"), "Strings should not to be null");
+
+            Assert.Throws(typeof(ArgumentNullException),()=>ConcatStringAlphabet.Longest(null, "vgkkcyfggkg"));
         }
         [Test]
         public void ConcatTest5()
         {
-            Assert.AreEqual(ConcatStringAlphabet.Longest("мтдвмтдвтивв", "vgkkcyfggkg"), "abcdefghijklmnopqrstvwxyz");
+            
+            Assert.Throws(typeof(FormatException), () => ConcatStringAlphabet.Longest("тмлуамутмут", "abcdefghijklmnopqrstvwxyz"));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -11,9 +12,9 @@ namespace Task2
     {
         public static string Longest(string a, string b)
         {
-            if (a != null && b != null)
+            if (a != null || b != null)
             {
-                Regex rg=new Regex("[a-z]");
+                Regex rg=new Regex(@"[a-z]");
                 if (rg.IsMatch(a) && rg.IsMatch(b))
                 {
                     string commonStr = a + b;
@@ -36,13 +37,13 @@ namespace Task2
                 }
                 else
                 {
-                    throw new Exception("Strings should consist of small english letters only");
+                    throw new  FormatException("Strings should consist of small english letters only");
                 }
             }
             else
 
             {
-                throw new NullReferenceException("Strings should not to be null");
+                throw new ArgumentNullException("Strings should not to be null");
 
             }
         }
