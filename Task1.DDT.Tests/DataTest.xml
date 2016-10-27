@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+  <TestCase>
+    <Array>1 2 3 4 3 2 1</Array>
+    <ExpectedResult>3</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Array>1 2 3 4 8 9 13 3 2 1</Array>
+    <ExpectedResult>-1</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <Array>1 50 -51 50 2</Array>
+    <ExpectedResult>1</ExpectedResult>
+  </TestCase>
+</TestCases>
